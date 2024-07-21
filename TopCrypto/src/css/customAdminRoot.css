@@ -1,0 +1,37 @@
+﻿.col-centered {
+    float: none !important;
+    margin: 0 auto !important;
+}
+
+.customSelectItemUl > li:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.customSelectItemUl.red-hover > li:hover {
+    background: #E74C3C;
+}
+
+.customSelectItemUl.green-hover > li:hover {
+    background: rgb(26,187,156);
+}
+
+.customSelectItemUl > li {
+    font-size: 18px;
+}
+
+.customSelectItemUl {
+    border: none;
+}
+
+.font-size-18px {
+    font-size: 18px;
+}
+
+.font-size-14px {
+    font-size: 14px;
+}
+
+#saveEntriesMessage {
+    font-size: 18px;
+}

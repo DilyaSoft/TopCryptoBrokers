@@ -1,0 +1,154 @@
+﻿@{
+    Layout = null;
+    int version = 1;
+}
+@using Microsoft.Extensions.Localization
+@using TopCrypto.Controllers.Root
+@using TopCrypto.DataLayer.Services.Language.Models
+@inject IStringLocalizer<RootController> _localizer
+
+<!DOCTYPE html>
+
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Title</title>
+
+    <!-- Import main styles -->
+    <link rel="stylesheet" href="/assets/css/style.css?version=@version">
+    <link rel="shortcut icon" href="/images/LoGoMini.png" type="image/png">
+
+    <!--<link rel="stylesheet" href="assets/css/addons.css">-->
+    <link rel="stylesheet" href="/css/topCryptoroot.css?version=@version">
+    <!--https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js-->
+    <script src="~/lib/jquery.min.js?version=@version"></script>
+
+    <script src="/assets/js/bootstrap.min.js?version=@version"></script>
+
+    <!--https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js-->
+    <script src="~/lib/knockout-min.js?version=@version"></script>
+    <!--//unpkg.com/navigo@6-->
+    <script src="~/lib/navigo.min.js?version=@version"></script>
+    <script src="~/js/topCryptoroot.js?version=@version"></script>
+    <!--<link rel="stylesheet" href="~/css/topCryptoroot.css" />-->
+    <base href="/">
+
+    <script type="text/javascript">
+        window.currentCultureFromServer = "@ViewData["selectedCulture"]";
+        window.urlToTrade = "@ViewData["urlToTrade"]";
+        window.monthsShort = @Html.Raw(_localizer["months"].Value);
+        window.linkToTitles = JSON.parse('@Html.Raw(ViewData["linkToTitles"])');
+    </script>
+
+    <script id="language-select-template" type="text/html">
+        <select id="language-selector" name="Language">
+            @foreach (var lng in ViewData["languages"] as IList<LanguageDTO>)
+            {
+                @Html.Raw("<option ")
+                if (((string)ViewData[" selectedCulture"]) == lng.Culture)
+                {
+                    @Html.Raw(" selected ")
+                }
+                @Html.Raw(string.Format(" value=\"{0}\" data-image=\"{1}\">{2}</option>", @lng.Culture, @lng.Image, @lng.Name))
+            }
+        </select>
+    </script>
+</head>
+<body class="site-body">
+    <script id="search-no-found" type="text/html">
+        <ul>
+            <li>@Html.Raw(_localizer["search_no_result"].Value)</li>
+        </ul>
+    </script>
+
+    <header class="site-header" id="wrapper">
+        <nav class="container  navbar navbar-expand-lg  navbar-light site-nav">
+            <a href="/"><img class="navbar-brand header-logo" src="assets/img/top-crypto.png" alt="TOP CRYPTO"></a>
+            <div class="icons hide-desktop">
+                <ul>
+                    <li class="icons"><a class="search-btn btn" href="/"><img src="assets/img/search.png" alt=""></a></li>
+                    <li class="icons language-flag"><a href="/"><img src="assets/img/flag.png" alt=""></a></li>
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar"
+                    aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav  ml-auto navi">
+                    <li><a href="/brokers">@Html.Raw(_localizer["menu_top"].Value)</a></li>
+                    <li><a href="/pages/crypto-glossary">@Html.Raw(_localizer["menu_glossary"].Value)</a></li>
+                    <li><a href="/pages/new-to-crypto">@Html.Raw(_localizer["menu_new"].Value)</a></li>
+                </ul>
+                <ul class="navbar-nav hide-desktop">
+                    <li><a href="/pages/terms-and-conditions">@Html.Raw(_localizer["menu_termsConditions"].Value)</a></li>
+                    <li><a href="/pages/newsletter">@Html.Raw(_localizer["menu_newsletter"].Value)</a></li>
+                    <li><a href="/pages/contact-us">@Html.Raw(_localizer["menu_contact"].Value)</a></li>
+                    <li><a class="trade-now" href="/">Trade Now</a></li>
+                </ul>
+            </div>
+            <div class="icons hide-mobile">
+                <ul>
+                    <li class="icons"><a class="search-btn btn" href="/"><img src="assets/img/search.png" alt=""></a></li>
+                    <li class="icons language-flag">
+                        <a href=""><img src="images/ruFlag.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div style="background-color: #f70600" id="mySearchContainer">
+            <div class="container search-bar">
+                <input type="text" class="pranab" name="Search" placeholder="@Html.Raw(_localizer["search_search"].Value)" id="mySearch">
+            </div>
+            <div class="search-bar container">
+                <div class="search-result"></div>
+            </div>
+        </div>
+    </header>
+    <div class="page-wrapper">
+        <div class="banner-wrapper-section">
+            <div class="banner-left">
+                <a href="https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsucJ2vEiIe2g6YoDArTkV1EMcLuVFSN_DK9gsljYxbXdKS6WBZyps7sY0kP48CO0JXKjEKEeWCSPakwzPhHbsx7iN6bunhSDlGk7S3SqtkSJtZZoohVuZaysbR-VinftfVzW4DE95hXKR6AD5-nTSzON5CwuZP3iGB7-znh3MVlYLe7IzYwSwkxFNPscT_PoRDlgXtfyfOMbHMcQauzh8P2JiAACvD0ZuhVf16CoHbm4GA&sai=AMfl-YQYS80gJQnIK8HeLhi1kWTDiw32MsIEBXoQoHv_GEOwHBjmdZPtcPxSvLOFaOrH__Siv1neFr2DqnK5h-XNVelD0GQDKCNWZgQappwqhIUsEJjO79SMjLVmJyw&sig=Cg0ArKJSzNR8fr2KeE-l&adurl=https://register1xbit.com/&nx=CLICK_X&ny=CLICK_Y" target="_blank">
+                    <div class="banner-image-wrapper">
+                        <img class="banner-left-img" src="https://tpc.googlesyndication.com/simgad/287956959435480284" />
+                    </div>
+                </a>
+            </div>
+            <div class="banner-right">
+                <a href="https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsu8amXf18MXz6PGIigXQmGkooDJiqDHtpAWUtyJxiKexFZbWKbk2_nxJ_qKzypySA6syPyJpHtko5dlPvCsUOo4sC8qBL0SuvS7RzvL6HnC8zvC18bUNOKWc0QDyyzRvguYSJUXDwfMjHtvSwE8PW9XdAVv7kXhkVVIS2CKNKCj7ze0-EMLXrQHgxAkViamyYV57FNixAnye8FCz3c1xJHVFCW3PSvGP74MTxg4C-9qoIE&sai=AMfl-YQ2RcYVmyPNpTKyHZvHuckahQvyJUUFWP7XU041PCNeVEMxLJsEmmKwhBWOS8FiGvMCHaM8kmv9I7GOh_3puCF5w23qCUE_5w_qEZEmX8GlV-TPevBsIVibU-M&sig=Cg0ArKJSzKB6OBzHv0AE&adurl=https://register1xbit.com/&nx=CLICK_X&ny=CLICK_Y" target="_blank">
+                    <div class="banner-image-wrapper">
+                        <img class="banner-right-img" src="https://tpc.googlesyndication.com/simgad/16632572067734270023" />
+                    </div>
+                </a>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <section>
+            <div class="container banner-center-section banner-center">
+                <a href="https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjsup2qZGMKVGb64rVsSq6RQkwQzNi7nfk-mJaqs0KSnA2ckOpNL59unMj88fb9f2M4P4_KyBaU-pzgfDy_MmeuJVfwhGKfYN8gXRuJRneVhLEuJS0IQ5PcnotY9_C86gA6_Eyr3TCEaA9SwW6wfqWI7DfxVggK032E0qka8MlmPZ8AeEz_jv_BNWTEu0tJBI0ngmpOnrBYg38qyiK3ZjLORUX-gW5mLl6B2RONriFutVR6g&sai=AMfl-YSOvLF71PcQjxA6E-VnzpBX6eNp4vnre-1R4ixw9rTocRVlTEN-dyVEQ4iIB-XtQ5Xwt8nWvlJ6o14nWyTaehaaOM73L8DpJjVpbWYUSTzoDJKiEec3NluCmQo&sig=Cg0ArKJSzCnZO78nA7GN&adurl=https://register1xbit.com/&nx=CLICK_X&ny=CLICK_Y" target="_blank">
+                    <img class="banner-center-img cursor-pointer" src="https://tpc.googlesyndication.com/simgad/333768462057768057" />
+                </a>
+            </div>
+        </section>
+        <section id="pre-page"><div class="container"></div></section>
+        <section id="page"></section>
+        <section id="after-page"><div class="container"></div></section>
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <ul class="footer-nav">
+                <li><a href="/pages/terms-and-conditions">@Html.Raw(_localizer["menu_termsConditions"].Value)</a></li>
+                <li><a href="/pages/newsletter">@Html.Raw(_localizer["menu_newsletter"].Value)</a></li>
+                <li><a href="/pages/contact-us">@Html.Raw(_localizer["menu_contact"].Value)</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            @Html.Raw(_localizer["menu_footer"].Value)
+        </div>
+    </footer>
+</body>
+</html>
