@@ -1,0 +1,283 @@
+.detail-table {
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+
+    .row {
+        margin-right: 0px;
+        margin-left: 0px;
+        padding: 10px;
+        padding-bottom: 25px;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    div {
+        table-layout: fixed;
+        width: 100%;
+        border-bottom: 1px solid #e2e2e2;
+        padding: 20px;
+
+        div {
+            border: none;
+            vertical-align: middle;
+            font-size: 14px;
+            font-weight: 400;
+            color: #646464;
+            text-align: left;
+
+            a {
+                font-size: 16px;
+                font-weight: 600;
+                color: black;
+                width: auto;
+            }
+
+            span {
+                font-size: 12px;
+                font-weight: 400;
+                color: #e2e2e2;
+            }
+
+            p {
+                padding: 0;
+            }
+
+            ul {
+                &:extend(.ul-unstyled);
+                text-align: left;
+
+                li {
+                    display: inline;
+                    margin-left: 15px;
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: #646464;
+                    margin: 8px;
+
+                    img {
+                        padding-right: 10px;
+                    }
+
+                    div {
+                        width: 120px;
+                    }
+                }
+            }
+        }
+
+        div.logo {
+            text-align: center;
+
+            img {
+                padding-left: 10px;
+                padding-right: 10px;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        div.detail-info {
+            margin-bottom: 35px;
+            padding: 0px;
+            width: 100%;
+            display: block;
+            text-align: left;
+
+            p {
+                text-align: left;
+                width: 100%;
+                font-size: 12px;
+                font-weight: 400;
+                color: #a3a3a3;
+            }
+
+            h3 {
+                text-align: left;
+                width: 100%;
+                font-size: 24px;
+                color: #262626;
+                margin: 0px;
+            }
+
+            div {
+                text-align: left;
+                padding-left: 0px;
+            }
+        }
+
+        div.cryptos {
+            float: right;
+            width: 100%;
+            text-align: left;
+            border: none;
+            padding: 0px;
+            display: block;
+
+            span {
+                font-size: 12px;
+                font-weight: 400;
+                color: #646464;
+                display: inline-block;
+                width: 75px;
+            }
+
+            h4 {
+                text-align: left;
+                font-size: 14px;
+                color: #262626;
+                font-weight: 400;
+                width: 100%;
+            }
+
+            ul {
+                &:extend(.ul-unstyled);
+                float: left;
+                text-align: left;
+                width: 100%;
+                padding-bottom: 15px;
+
+                li {
+                    width: 100%;
+                    display: block;
+                    margin-left: 15px;
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: #646464;
+                    margin: 8px 0px;
+
+                    img {
+                        padding-right: 10px;
+                        width: 30px;
+                    }
+                }
+            }
+
+            ul.nav {
+                width: 100%;
+                text-align: center;
+                vertical-align: middle;
+                padding: 0;
+
+                li {
+                    display: inline-block;
+                    width: 43%;
+                    text-align: center;
+                    vertical-align: middle;
+                    margin: auto;
+                    margin-left: 0px;
+
+                    span {
+                        display: inline-block;
+                        color: #f70600;
+                        margin: auto;
+                        padding: 10px;
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                    }
+
+                    div.review {
+                        border: 1px solid #f70600;
+                        border-radius: 3px;
+                        padding: 25px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        text-align: center;
+                        margin: auto;
+
+                        &.active {
+                            background-color: #f70600;
+                            color: #fff;
+                        }
+
+                        &:hover {
+                            background-color: #f70600;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        div.contact-info {
+            p {
+                text-align: left;
+                font-size: 14px;
+                font-weight: 400;
+                padding-top: 14px;
+
+                span {
+                    text-align: left;
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: #f70600;
+                }
+            }
+        }
+
+        div.info {
+            padding: 0px;
+
+            p {
+                text-align: left;
+                font-size: 14px;
+                font-weight: 500;
+                color: #646464;
+                padding-top: 34px;
+
+                span {
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #b0b0b0;
+                    padding-right: 5em;
+                }
+            }
+        }
+
+        div.info2 {
+            padding: 0px;
+
+            p {
+                padding-right: 20px;
+                text-align: left;
+                font-size: 12px;
+                font-weight: 400;
+                color: #646464;
+            }
+        }
+
+        div.info3 {
+            padding: 0px;
+
+            p {
+                text-align: left;
+                font-size: 12px;
+                font-weight: 400;
+                color: #b0b0b0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .info {
+        P {
+            span {
+                display: inline-block;
+                width: 100% !important;
+            }
+        }
+    }
+
+    .nav {
+        li {
+            width: 100% !important;
+        }
+    }
+}

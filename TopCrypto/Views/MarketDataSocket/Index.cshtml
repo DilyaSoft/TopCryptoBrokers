@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>Index</title>
+</head>
+<body>
+    <script>
+        var protocol = location.protocol === "https:" ? "wss:" : "ws:";
+        var wsUri = protocol + "//" + window.location.host + '/api/MarketDataSocket/ConnectSocket';
+        var socket = new WebSocket(wsUri);
+
+        socket.onmessage = function (e) {
+            console.log(e.data);
+            document.getElementById("message").textContent += "\nbzz: " + e.data;
+        };
+        socket.onclose = function (e) {
+            console.log("socket closed");
+        }
+        socket.onerror = function (e) {
+            console.error(e);
+        }
+        
+    </script>
+    <div>Hello there!</div>
+    <div id="message"></div>
+
+</body>
+</html>

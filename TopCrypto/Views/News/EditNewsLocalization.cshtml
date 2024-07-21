@@ -1,0 +1,63 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Edit Broker <small>English Localization</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content" style="display: block;">
+                <form id="edit-news-localization-form" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="title">Title</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" id="title" name="title" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="previewBody">Preview</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <textarea type="text" id="previewBody" name="previewBody" class="form-control col-md-7 col-xs-12"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="body">Body</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <textarea type="text" id="body" name="body" class="form-control col-md-7 col-xs-12"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-9" for="isHidden">
+                            isHidden
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-3">
+                            <input type="checkbox" id="isHidden" name="isHidden" value="true" class="customCheckBox">
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <button id="cancel-btn" type="button" disabled="disabled" class="btn btn-primary">Cancel</button>
+                            <button id="save-btn" type="submit" disabled="disabled" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

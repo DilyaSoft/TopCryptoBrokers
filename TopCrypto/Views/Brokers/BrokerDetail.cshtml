@@ -1,0 +1,132 @@
+﻿@{
+    Layout = null;
+}
+
+@using Microsoft.Extensions.Localization
+@using TopCrypto.Controllers.Brokers
+@inject IStringLocalizer<BrokersController> _localizer
+
+<section class="hide-mobile">
+    <div class="container navigation">
+        <p><a href="/">@Html.Raw(_localizer["broker_detail_link1"].Value)</a> /<a href="/brokers">@Html.Raw(_localizer["broker_detail_link2"].Value)</a> /<a disabled>@Html.Raw(_localizer["broker_detail_link3"].Value)</a></p>
+    </div>
+</section>
+
+<div class="container detail-table">
+    <div class="row">
+        <div class="text-center col-12 col-lg-3 col no-padding-logo">
+            <div class="logo"><img data-bind="attr:{src: urlImg}" alt=""></div>
+        </div>
+        <div class="text-center col-12 col-lg-4 col detail-info">
+            <h3 data-bind="text:name"></h3>
+            <div data-bind="foreach: new Array(mark>5?5:!mark||mark<0?0:mark)">
+                <span><img src="assets/img/star.png" alt=""></span>
+            </div>
+            <p>
+                @Html.Raw(_localizer["broker_detail_regulatedBy"].Value): <span class="content-text-color" data-bind="text:regulatedBy"></span>
+                <br />
+                <br />
+                @Html.Raw(_localizer["broker_detail_foundation"].Value): <span class="content-text-color" data-bind="text:foundation"></span>
+                <br />
+                <br />
+                @Html.Raw(_localizer["broker_detail_business_nature"].Value): <span class="content-text-color" data-bind="text:businessNature"></span>
+            </p>
+        </div>
+        <div class="text-center col-12 col-lg-3 offset-lg-2 col cryptos">
+            <h4 class="no-visible">@Html.Raw(_localizer["broker_detail_live_cryptos"].Value)</h4>
+            <ul class="no-visible">
+                <li><img src="assets/img/Currency/bitcoin.png" alt=""><span class="hide-mobile">Bitcoin</span>$8,965.03</li>
+                <li><img src="assets/img/Currency/Ethereum.png" alt=""><span class="hide-mobile">Ethereum</span>$538.54</li>
+                <li><img src="assets/img/Currency/Dash.png" alt=""><span class="hide-mobile">Dash</span>$0.654849</li>
+            </ul>
+            <ul class="nav">
+                <li><div class="review trade-now-handler cursor-pointer">@Html.Raw(_localizer["broker_detail_trade"].Value)</div></li>
+                <li><a href="/brokers"><span class="cursor-pointer">@Html.Raw(_localizer["broker_detail_view_all"].Value)</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center col-12 col-lg-3 col contact-info hide-mobile">
+            <p>
+                <span class="content-text-color" data-bind="html:phoneNumbersHtml"></span>
+                <br />
+                <span data-bind="html:emailHtml"></span>
+            </p>
+        </div>
+        <div class="col-12 col-lg-9 col info">
+            <div class="broker-detail-table">
+                <div data-bind="visible: leverage">
+                    <div>@Html.Raw(_localizer["broker_detail_leverage"].Value)</div>
+                    <div class="content-text-color" data-bind="text:leverage"></div>
+                </div>
+
+                <div data-bind="visible: instruments">
+                    <div>@Html.Raw(_localizer["broker_detail_instruments"].Value)</div>
+                    <div class="content-text-color" data-bind="text:instruments"></div>
+                </div>
+
+                <div data-bind="visible: platforms">
+                    <div>@Html.Raw(_localizer["broker_detail_platforms"].Value)</div>
+                    <div class="content-text-color" data-bind="text:platforms"></div>
+                </div>
+
+                <div data-bind="visible: accountTypes">
+                    <div>@Html.Raw(_localizer["broker_detail_account_types"].Value)</div>
+                    <div class="content-text-color" data-bind="html:accountTypes?accountTypes.replace(/\n/g, '<br />'): accountTypes"></div>
+                </div>
+
+                <div data-bind="visible: lotSizes">
+                    <div>@Html.Raw(_localizer["broker_detail_lot_sizes"].Value)</div>
+                    <div class="content-text-color" data-bind="text:lotSizes"></div>
+                </div>
+
+                <div data-bind="visible: demoAccount">
+                    <div>@Html.Raw(_localizer["broker_detail_demo_account"].Value)</div>
+                    <div class="content-text-color" data-bind="text:demoAccount"></div>
+                </div>
+
+                <div data-bind="visible: accountCurrency">
+                    <div>@Html.Raw(_localizer["broker_detail_account_currency"].Value)</div>
+                    <div class="content-text-color" data-bind="text:accountCurrency"></div>
+                </div>
+
+                <div data-bind="visible: pairsOffered">
+                    <div>@Html.Raw(_localizer["broker_detail_pairs_offered"].Value)</div>
+                    <div class="content-text-color" data-bind="text:pairsOffered"></div>
+                </div>
+
+                <div data-bind="visible: paymentMethods">
+                    <div>@Html.Raw(_localizer["broker_detail_payment_methods"].Value)</div>
+                    <div class="content-text-color" data-bind="text:paymentMethods"></div>
+                </div>
+
+                <div data-bind="visible: commissions">
+                    <div>@Html.Raw(_localizer["broker_detail_commissions"].Value)</div>
+                    <div class="content-text-color" data-bind="text:commissions"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-9 info" style="margin-left: auto;">
+            <div data-bind="visible: additionalText" class="info">
+                <div class="content-text-color" data-bind="text:additionalText"></div>
+            </div>
+
+            <div data-bind="visible: !(leverage||instruments||platforms||accountTypes||lotSizes||demoAccount||accountCurrency||pairsOffered||paymentMethods||commissions||additionalText)">
+                @Html.Raw(_localizer["broker_detail_no_info"].Value)
+            </div>
+        </div>
+    </div>
+    <div class="row" data-bind="visible: shortInfo1 || shortInfo2">
+        <div class="text-center col-12 col-lg-6 col info2">
+            <p data-bind="text:shortInfo1"></p>
+        </div>
+        <div class="col-12 col-lg-6 col info2">
+            <p data-bind="text:shortInfo2"></p>
+        </div>
+    </div>
+    <div class="row" data-bind="visible: endInfo">
+        <div class="text-center col-12 col info3">
+            <p data-bind="text:endInfo"></p>
+        </div>
+    </div>
+</div>

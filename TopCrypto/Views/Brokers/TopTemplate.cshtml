@@ -1,0 +1,108 @@
+﻿@{
+    Layout = null;
+}
+@using Microsoft.Extensions.Localization
+@using TopCrypto.Controllers.Brokers
+@inject IStringLocalizer<BrokersController> _localizer
+
+<script type="text/html" id="best-broker-table-template">
+    <tr>
+        <td>
+            <div class="logo"><img data-bind="attr:{src: imagePath}" src="assets/img/brockers/beHappy.png" alt=""></div>
+        </td>
+        <td class="broker">
+            <h3 data-bind="text:name"></h3>
+            <div data-bind="foreach: new Array(mark>5?5:!mark||mark<0?0:mark)">
+                <span><img src="assets/img/star.png" alt=""></span>
+            </div>
+            <p class="broker-description" data-bind="text: description"></p>
+        </td>
+        <td>
+            <div>
+                <ul>
+                    <li data-bind="text:minDepositListing"></li>
+                    <li data-bind="text:regulationListing"></li>
+                    <li data-bind="text:spreadsListing"></li>
+                </ul>
+            </div>
+        </td>
+        <!--
+        <td>
+            <div>
+                <ul data-bind="foreach: cryptos">
+                    <li>
+                        <img src="assets/img/Currency/bitcoin.png" alt="">
+                        <span class="content-text-color" data-bind="text: $data.cryptoId + '  $' + $data.value ">
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </td>
+            -->
+        <td><div data-bind="click: $parent.reviewBrokerClick" class="review cursor-pointer">@Html.Raw(_localizer["top_brokers_review"].Value)</div></td>
+    </tr>
+</script>
+
+<script type="text/html" id="best-broker-row-template">
+    <div class="row">
+        <div class="text-center col-12 hide-desktop">
+            <div class="broker">
+                <div class="broker-logo"><img class="broker-logo-inner-img" data-bind="attr:{src: imagePath}" src="assets/img/brockers/beHappy.png" alt=""></div>
+                <h3 data-bind="text:name"></h3>
+                <div data-bind="foreach: new Array(mark>5?5:!mark||mark<0?0:mark)">
+                    <span><img src="assets/img/star.png" alt=""></span>
+                </div>
+                <div>
+                    <ul>
+                        <li data-bind="text:minDepositListing"></li>
+                        <li data-bind="text:regulationListing"></li>
+                        <li data-bind="text:spreadsListing"></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul data-bind="foreach: cryptos">
+                        <li>
+                            <img src="assets/img/Currency/bitcoin.png" alt="">
+                            <span class="content-text-color" data-bind="text: $data.cryptoId + '  $' + $data.value "></span>
+                        </li>
+                    </ul>
+                </div>
+                <div data-bind="click: $parent.reviewBrokerClick" class="review cursor-pointer"><a href="/">@Html.Raw(_localizer["top_brokers_review"].Value)</a></div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<section class="hide-mobile">
+    <div class="container navigation">
+        <p><a href="/">@Html.Raw(_localizer["top_brokers_link"].Value)</a></p>
+    </div>
+</section>
+<section>
+    <div class="container best-crypto-table" id="table-wrap">
+        <h2>@Html.Raw(_localizer["top_brokers_title"].Value)</h2>
+        <table class="hide-mobile" cellspacing="0" id="master">
+            <thead>
+                <tr>
+                    <th>@Html.Raw(_localizer["top_brokers_broker"].Value)</th>
+                    <th>@Html.Raw(_localizer["top_brokers_info"].Value)</th>
+                    <th><span>&nbsp;</span></th>
+                    <!--<th>@Html.Raw(_localizer["top_brokers_cryptos"].Value)</th>-->
+                    <th><span>&nbsp;</span></th>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'best-broker-table-template', foreach: brokers }"></tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div data-bind="template: { name: 'best-broker-row-template', foreach: brokers }" class="container stn-brokers"></div>
+</section>
+<div class="container tbl-paging li-button-arrangement">
+    <ul>
+        <li id="price-hide" data-bind="visible: brokers().length > 10, css: { 'none-right-border': brokers().length >= brokersCount() }">@Html.Raw(_localizer["top_brokers_hide"].Value)</li>
+        <li id="price-next-10" data-bind="visible: brokers().length < brokersCount()">@Html.Raw(_localizer["top_brokers_next10"].Value) &#10095;</li>
+        <li id="price-view-all" class="none-right-border" data-bind="visible: brokers().length < brokersCount()">@Html.Raw(_localizer["top_brokers_view_all"].Value)</li>
+    </ul>
+</div>

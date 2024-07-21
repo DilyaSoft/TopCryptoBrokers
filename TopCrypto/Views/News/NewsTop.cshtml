@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+
+<script type="text/html" id="news-row-item-template">
+    <h3 data-bind="text:title"></h3>
+    <h4 data-bind="text:dateForShowing"></h4>
+    <p  data-bind="text:previewBody"></p>
+    <div><a  data-bind="attr:{href: '/news/' + url}" href="">Read more</a></div>
+</script>
+
+<div class="container news">
+    <h2>News</h2>
+    <div class="row">
+        <div class="text-center col-md-12 col-lg-6 news-block">
+            <div valign="middle" align="center"><img src="assets/img/news-picture.jpg" width="100%" alt=""></div>
+        </div>
+        <div class="text-center col-md-12 col-lg-6 news-block"
+             data-bind="template: { name: 'news-row-item-template', data : $root.newsData[0], if: 0<$root.newsData.length}"></div>
+    </div>
+    <!--ko foreach:newsData-->
+    <!--ko if:($index()+1)%2==0-->
+    <div class="row">
+        <div class="text-center col-md-12 col-lg-6 news-block"
+             data-bind="template: { name: 'news-row-item-template', data : $root.newsData[$index()], if: $index()<$root.newsData.length}"></div>
+        <div class="text-center col-md-12 col-lg-6 news-block"
+             data-bind="template: { name: 'news-row-item-template', data : $root.newsData[$index()+1], if: $index()+1<$root.newsData.length}"></div>
+    </div>
+    <!--/ko-->
+    <!--/ko-->
+</div>

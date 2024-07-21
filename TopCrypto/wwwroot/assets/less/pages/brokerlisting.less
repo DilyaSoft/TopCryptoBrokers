@@ -1,0 +1,114 @@
+.best-crypto-table {
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    div {
+        float: right;
+        width: 100%;
+        text-align: left;
+        border: none;
+
+        ul {
+            &:extend(.ul-unstyled);
+            float: left;
+            text-align: left;
+
+            li {
+                display: block;
+                font-size: 12px;
+                font-weight: 400;
+                color: #646464;
+                margin: 8px;
+                margin-left: 0px;
+
+                img {
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+
+    div.logo {
+        text-align: center;
+
+        img {
+            padding-left: 10px;
+            padding-right: 10px;
+            max-width: 270px;
+            height: auto;
+        }
+    }
+
+    div.review {
+        border: 1px solid #f70600;
+        padding: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+
+        &.active {
+            background-color: #f70600;
+            color: #fff;
+        }
+
+        &:hover {
+            background-color: #f70600;
+            color: #fff;
+        }
+    }
+
+    table {
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+        vertical-align: text-top;
+
+        td {
+            border: 1px solid #e2e2e2;
+            border-left: none;
+            border-right: none;
+            padding: 15px;
+            padding-left: 0px;
+            padding-right: 5px;
+            vertical-align: middle;
+            font-size: 14px;
+            font-weight: 400;
+            color: #646464;
+            text-align: left;
+
+            a {
+                font-size: 16px;
+                font-weight: 600;
+                color: black;
+                width: auto;
+            }
+
+            span {
+                font-size: 12px;
+                font-weight: 400;
+                color: #e2e2e2;
+            }
+
+            p {
+                padding: 0;
+            }
+        }
+
+        th {
+            vertical-align: text-top;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+}
