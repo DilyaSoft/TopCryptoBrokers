@@ -1,0 +1,118 @@
+﻿@{
+    Layout = null;
+}
+
+@using Microsoft.Extensions.Localization
+@using TopCrypto.Controllers.Coininfo
+@inject IStringLocalizer<CoinInfoController> _localizer
+
+<script id="price-row-template" type="text/html">
+    <tr class="graph-click-handler" data-bind="visible: $index() < $parent.countOfVisibleNodes()">
+        <td>
+            <a data-href="content1" data-bind="attr:{contentId:id}">
+                <img data-bind="attr: { src: '/api/CoinImage/GetImageById?id=' + id }" alt="">
+                <!--ko text: name--><!--/ko-->
+            </a>
+        </td>
+        <td>
+            <!-- ko if: price_usd !== null -->
+            <!--ko text: '$ ' + price_usd--><!--/ko--><br>
+            <span data-bind="text: 'BTC ' + price_btc"></span>
+            <!--/ko-->
+            <!-- ko if: price_usd === null -->
+            @Html.Raw(_localizer["no_data"].Value)
+            <!--/ko-->
+        </td>
+        <td class="hide-mobile">
+            <!-- ko if: market_cap_usd !== null -->
+            <!--ko text: '$ ' + market_cap_usd--><!--/ko-->
+            <!--/ko-->
+        </td>
+        <td data-bind="css: { 'change-down': percent_change_24h < 0, 'change-up': percent_change_24h > 0 }">
+            <!--ko text: percent_change_24h --><!--/ko-->
+            <!-- ko if: percent_change_24h !== null -->
+            <span data-bind="text: percent_change_24h < 0? '▾' : '▴' ">▴</span>
+            <!--/ko-->
+        </td>
+        <td class="allign-right hide-mobile hide-expanded">
+            <!--<img src="assets/img/graph/graph1.png" alt="">-->
+            <canvas data-bind="attr: {id: 'price-graph-' + id}" width="142" height="45">
+                Your browser does not support the HTML5 canvas tag.
+            </canvas>
+        </td>
+        <td class="hide-mobile hide-expanded"><div class="trade-now-handler cursor-pointer">@Html.Raw(_localizer["price_trade"].Value)</div></td>
+        <td style="width:0px"></td>
+    </tr>
+</script>
+
+<div class="container market-watch" id="table-wrap">
+    <div>
+        <span class="market-title">@Html.Raw(_localizer["price_title"].Value)</span>
+        <span class="market-update-time">&nbsp;&nbsp;&nbsp;&nbsp;21.02.2018 19:23:02 GMT</span>
+    </div>
+    <ul class="tbl-nav" style="display:none">
+        <li>21.02.2018</li>
+        <li>19:23:02 GMT</li>
+        <li><input type="text" placeholder="@Html.Raw(_localizer["price_search"].Value)" id="myInput" class="hide-mobile"></li>
+    </ul>
+    <table class="top-table" cellspacing="0" id="master">
+        <thead>
+            <tr>
+                <th>@Html.Raw(_localizer["price_tbl_currency"].Value)</th>
+                <th>
+                    @Html.Raw(_localizer["price_tbl_price"].Value)<br>
+                    <span>USD ▾</span>
+                </th>
+                <th class="hide-mobile">
+                    @Html.Raw(_localizer["price_tbl_cap"].Value)<br>
+                    <span>@Html.Raw(_localizer["price_tbl_cap"].Value)</span>
+                </th>
+                <th class="change">
+                    @Html.Raw(_localizer["price_tbl_change"].Value)<br>
+                    <span>@Html.Raw(_localizer["price_tbl_last24h"].Value)</span>
+                </th>
+                <th class="allign-right hide-mobile">
+                    @Html.Raw(_localizer["price_tbl_priceGraph"].Value)<br>
+                    <span>@Html.Raw(_localizer["price_tbl_last7days"].Value)</span>
+                </th>
+                <th class="hide-mobile">
+                    <span>&nbsp;</span>
+                </th>
+                <th style="width:0px"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- ko  template: { name: 'price-row-template', foreach: prices } -->
+            <!-- /ko -->
+        </tbody>
+    </table>
+</div>
+<!--hide-mobile -->
+<div class="container tbl-paging li-button-arrangement">
+    <ul>
+        <li id="price-hide" data-bind="visible: count() > 10 && 10 < countOfVisibleNodes(), css: { 'none-right-border': count() < countOfVisibleNodes() }">@Html.Raw(_localizer["price_graph_hide"].Value)</li>
+        <li id="price-next-10" data-bind="visible: count() > countOfVisibleNodes()">@Html.Raw(_localizer["price_graph_next10"].Value) ❯</li>
+        <li id="price-view-all" data-bind="visible: count() > countOfVisibleNodes()" class="none-right-border">@Html.Raw(_localizer["price_graph_viewAll"].Value)</li>
+    </ul>
+</div>
+<section>
+    <div id="content1" style="display: none;">
+        <div class="red-border-of-selected-item-left"></div>
+        <div>
+            <ul>
+                <li class="period"><div><a class="calendar-link-value" data-value="day">@Html.Raw(_localizer["price_graph_week"].Value)</a></div></li>
+                <li class="period"><div><a class="calendar-link-value" data-value="month">@Html.Raw(_localizer["price_graph_month"].Value)</a></div></li>
+                <li class="period"><div><a class="calendar-link-value" data-value="year">@Html.Raw(_localizer["price_graph_year"].Value)</a></div></li>
+                <li class="dates"><div class="hide-mobile"><a id="price-calendar-forward">❯</a></div></li>
+                <li class="dates"><div class="hide-mobile"><a id="price-calendar-back">❮</a></div></li>
+                <li class="dates"><div class="hide-mobile" id="price-calendar-title">12 Feb - 19 Feb</div></li>
+            </ul>
+        </div>
+        <div valign="middle" align="center">
+            <canvas id="grapthImage" width="1085" height="297">Your browser doesn't support canvas</canvas>
+        </div>
+        <div class="trade-now trade-now-handler cursor-pointer"><a class="trade">@Html.Raw(_localizer["price_trade"].Value)</a></div>
+        <div class="red-border-of-selected-item-right"></div>
+    </div>
+</section>
+<!-- content1 -->

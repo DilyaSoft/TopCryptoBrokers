@@ -1,0 +1,12 @@
+﻿{
+  "compilerOptions": {
+    "target": "es6",
+    "moduleResolution": "node",
+    "module": "amd"
+  },
+  "exclude": [
+    "wwwroot",
+    "node_modules",
+    "bower_components"
+  ]
+}

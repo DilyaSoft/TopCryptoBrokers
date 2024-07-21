@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+@using Microsoft.AspNetCore.Mvc.Localization
+@using TopCrypto.Controllers.Templates
+
+@inject IHtmlLocalizer<TemplateController> _localizer
+
+<div class="calculator-items container calculator">
+    <div class="cont">
+        <div class="row">
+            <div class="text-center col-12 col-lg-8 offset-lg-2 col">
+                <h2>@Html.Raw(_localizer["calc_title"].Value)</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center col-12 col-lg-8 offset-lg-2 col">
+                <p>@Html.Raw(_localizer["calc_descr_two"].Value)</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center col-0 col-lg-1 offset-lg-2 col">
+                <h2>@Html.Raw(_localizer["calc_i_have"].Value):</h2>
+            </div>
+            <div class="text-center col-12 col-lg-5 col">
+                <input type="text" id="calculatorFromCount">
+            </div>
+            <div class="text-center col-12 col-lg-2 col">
+                <select id="calculatorFromCoin" data-bind="options: prices,
+                       optionsText: 'name',
+                        optionsValue: 'id'"></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center col-0 col-lg-1 offset-lg-2 col">
+                <h2>@Html.Raw(_localizer["calc_i_want"].Value):</h2>
+            </div>
+            <div class="text-center col-12 col-lg-2 col">
+                <select id="calculatorToCoin" data-bind="options: prices,
+                       optionsText: 'name',
+                        optionsValue: 'id'"></select>
+            </div>
+            <div class="text-center col-12 col-lg-5 col">
+                <input type="text" id="calculatorToCount">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<section>-->
+
+<div class="container trade-with hide-mobile">
+    <div class="row">
+        <div class="text-center col-0 col-lg-1 offset-lg-2 col">
+            <h2>@Html.Raw(_localizer["calc_2_trade_with"].Value)</h2>
+        </div>
+        <div class="text-center col-0 col-lg-3 col">
+            <select>
+                <option value="ForexBroker" label="ForexBroker" selected>ForexBroker</option>
+            </select>
+        </div>
+        <div class="text-center col-0 col-lg-3 col">
+            <div class="open"><a href="/">@Html.Raw(_localizer["calc_2_open_acc"].Value)</a></div>
+        </div>
+    </div>
+</div>
+
+<!--</section>-->

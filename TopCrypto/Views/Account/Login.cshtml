@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+@{
+    Layout = null;
+}
+<!-- saved from url=(0050)https://colorlib.com/polygon/gentelella/login.html -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login </title>
+    <link rel="shortcut icon" href="/images/LoGoMini.png" type="image/png">
+    <!--
+    <link href="./Gentelella Alela! __files/bootstrap.min.css" rel="stylesheet">
+    <link href="./Gentelella Alela! __files/font-awesome.min.css" rel="stylesheet">
+    <link href="./Gentelella Alela! __files/nprogress.css" rel="stylesheet">
+    <link href="./Gentelella Alela! __files/animate.min.css" rel="stylesheet">
+    <link href="./Gentelella Alela! __files/custom.min.css" rel="stylesheet">
+        -->
+    <!--https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js-->
+    <script src="~/lib/jquery.min.js"></script>
+    <!--https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js-->
+    <script src="~/lib/knockout-min.js"></script>
+    <!--//unpkg.com/navigo@6-->
+    <script src="~/lib/navigo.min.js"></script>
+    <!--http://parsleyjs.org/doc/download.html-->
+    <script src="~/lib/parsley.min.js"></script>
+    <script src="~/js/login.js"></script>
+
+    <link href="~/css/gentelella.css" rel="stylesheet" />
+    <link href="~/css/login.css" rel="stylesheet" />
+</head>
+
+<body class="login">
+    <div>
+        <!--
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+            -->
+        <div class="login_wrapper">
+            <div id="loginPage" class="animate form login_form hidden">
+                <section class="login_content">
+                    <form>
+                        <h1>Login Form</h1>
+                        <div>
+                            <input type="text" name="username" class="form-control " placeholder="Username" required="required">
+                        </div>
+                        <div>
+                            <input type="password" name="password" class="form-control" placeholder="Password" required="required">
+                        </div>
+                        <div id="errorMessage" class="red hidden">
+                            Not authorized
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" href="#" id="logInBtn">Log in</a>
+                            <a class="reset_pass" href="#">Lost your password?</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link hidden">
+                                New to site?
+                                <a href="#" class="to_register"> Create Account </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br>
+
+                            <div>
+                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <!--
+            <div id="register" class="animate form registration_form">
+                <section class="login_content">
+                    <form>
+                        <h1>Create Account</h1>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Username" required="">
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" placeholder="Email" required="">
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Password" required="">
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" href="#">Submit</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">
+                                Already a member ?
+                                <a href="#" class="to_register"> Log in </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br>
+
+                            <div>
+                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            -->
+        </div>
+    </div>
+</body>
+</html>
