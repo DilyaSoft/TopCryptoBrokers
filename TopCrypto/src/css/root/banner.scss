@@ -1,0 +1,135 @@
+﻿.banner-wrapper-section {
+    display: none;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    position: absolute;
+    height: 0px;
+    > {
+        .banner-left, .banner-right {
+            height: 100%;
+            width: 50%;
+            right: 0px;
+        }
+
+        .banner-left {
+            float: left;
+        }
+
+        .banner-right {
+            float: right;
+        }
+    }
+}
+
+.banner-image-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    > .banner-left-img {
+        position: absolute;
+        right: 0;
+    }
+
+    > .banner-right-img {
+        position: absolute;
+        left: 0;
+    }
+}
+
+.banner-center-img {
+    width: 100%;
+}
+
+#page {
+    z-index: 0;
+}
+
+#wrapper {
+    z-index: 0;
+}
+
+@media (min-width: 576px) {
+    .banner-wrapper-section {
+        display: block;
+    }
+
+    .banner-left {
+        padding-right: 269px;
+    }
+
+    .banner-right {
+        padding-left: 269px;
+    }
+
+    .banner-right-img {
+        width: 247px;
+    }
+
+    .banner-left-img {
+        width: 250px;
+    }
+
+    .banner-center-img {
+        width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .banner-left {
+        padding-right: 359px;
+    }
+
+    .banner-right {
+        padding-left: 359px;
+    }
+
+    .banner-right-img {
+        width: 330px;
+    }
+
+    .banner-left-img {
+        width: 333px;
+    }
+
+    .banner-center-img {
+        width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .banner-left {
+        padding-right: 479px;
+    }
+
+    .banner-right {
+        padding-left: 479px;
+    }
+
+    .banner-right-img, .banner-left-img {
+        width: 440px;
+    }
+
+    .banner-center-img {
+        width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .banner-left {
+        padding-right: 569px;
+    }
+
+    .banner-right {
+        padding-left: 569px;
+    }
+
+    .banner-right-img, .banner-left-img {
+        width: 521px;
+    }
+
+    .banner-center-img {
+        width: 1140px;
+    }
+}

@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="">
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Cryptocurrency settings</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br>
+                    <form id="demo-form2" class="form-horizontal form-label-left" novalidate="">
+                        <div class="col-md-6 col-sm-9 col-xs-12 col-centered font-size-18px">Selected cryptocurrency <span class="font-size-14px">(Click to remove)</span></div>
+                        <ul id="selectedEntriesTbl" class="red-hover nav nav-tabs tabs-left col-md-6 col-sm-9 col-xs-12 col-centered customSelectItemUl"></ul>
+
+                        <div id="saveEntriesMessage" class="col-md-6 col-sm-9 col-xs-12 col-centered hidden">Please select at least one entry</div>
+
+                        <!--<div class="clearfix"></div>-->
+                        <div class="clear"></div>
+                        <div class="input-group col-md-6 col-sm-9 col-xs-12 col-centered">
+                            <input type="text" id="inputFilter" class="form-control">
+                            <span class="input-group-btn">
+                                <button id="clearInputFilter" type="button" class="btn btn-primary">Clean</button>
+                            </span>
+                        </div>
+                        <ul id="foundedItems" class="green-hover nav nav-tabs tabs-left col-md-6 col-sm-9 col-xs-12 col-centered customSelectItemUl"></ul>
+                        <div id="emptyMessage" class="col-md-6 col-sm-9 col-xs-12 col-centered hidden">No Entry Founded</div>
+                        <div id="allEntrySelectedMessage" class="col-md-6 col-sm-9 col-xs-12 col-centered hidden">All Entry Selected</div>
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                <button id="saveEntriesBtn" type="submit" disabled="disabled" class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                <div id="messagePost" class="bg-red-message-info text-message-info" style="display:none"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

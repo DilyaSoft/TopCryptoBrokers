@@ -1,0 +1,222 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
+    <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="src\js\loginApp\services\**" />
+    <Content Remove="src\js\loginApp\services\**" />
+    <EmbeddedResource Remove="src\js\loginApp\services\**" />
+    <None Remove="src\js\loginApp\services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\file.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="src\js\adminApp\interfaces\abstractEditAddPageInitializer.ts" />
+    <None Remove="src\js\adminApp\interfaces\abstractEntryDataService.ts" />
+    <None Remove="src\js\adminApp\interfaces\AbstractEntryRenderService.ts" />
+    <None Remove="src\js\adminApp\interfaces\abstractSettingsListPageInitializer.ts" />
+    <None Remove="src\js\adminApp\interfaces\AbstractTableInitializer.ts" />
+    <None Remove="src\js\adminApp\interfaces\ientryRenderService.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\addBrokerPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\brokerListPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\coinListPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\editBrokerLocalizationPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\editBrokerPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\fiatListPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\newsListPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\news\addNewsPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\news\editNewsLocalizationPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\news\editNewsPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\settings\editSettingPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\settings\settingsListTemplatesAndURlsPageInitializer.ts" />
+    <None Remove="src\js\adminApp\pageInitializer\settings\settingsListTitlesPageInitializer.ts" />
+    <None Remove="src\js\adminApp\services\BrokerListTableInitializer.ts" />
+    <None Remove="src\js\adminApp\services\coins\entryDataServiceCoin.ts" />
+    <None Remove="src\js\adminApp\services\coins\EntryRenderServiceCoin.ts" />
+    <None Remove="src\js\adminApp\services\coins\IEntryDataServiceCoin.ts" />
+    <None Remove="src\js\adminApp\services\EntryDataService.ts" />
+    <None Remove="src\js\adminApp\services\EntryRenderService.ts" />
+    <None Remove="src\js\adminApp\services\IEntryDataService.ts" />
+    <None Remove="src\js\adminApp\services\newsListTableInitializer.ts" />
+    <None Remove="src\js\adminApp\services\settingsListTableInitializer.ts" />
+    <None Remove="src\js\interfaces\irootbundle.ts" />
+    <None Remove="src\js\loginApp\pageInitializer\loginPageInitializer.ts" />
+    <None Remove="src\js\services\apiCoinGraph.ts" />
+    <None Remove="src\js\services\iTemplateConstructor.ts" />
+    <None Remove="src\js\services\navigoRouter.ts" />
+    <None Remove="src\js\services\parsley.d.ts" />
+    <None Remove="src\js\topCryptoRoot\pageInitializer\newsDetailInitializer.ts" />
+    <None Remove="src\js\topCryptoRoot\pageInitializer\newsTopInitializer.ts" />
+    <None Remove="src\js\topCryptoRoot\pageInitializer\staticPageInitializer.ts" />
+    <None Remove="src\js\topCryptoRoot\services\priceGraphCalendar\calendarHelper.ts" />
+    <None Remove="src\js\topCryptoRoot\services\priceGraphCalendar\dayWeekCalendar.ts" />
+    <None Remove="src\js\topCryptoRoot\services\priceGraphCalendar\monthCalendar.ts" />
+    <None Remove="src\js\topCryptoRoot\services\priceGraphCalendar\yearCalendar.ts" />
+    <None Remove="src\js\topCryptoRoot\services\priceGraphHelper.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="3.0.0" />
+    <PackageReference Include="Serilog.Settings.AppSettings" Version="2.2.2" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="serilog.sinks.graylog" Version="2.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TopCryptoServicesLayer\TopCrypto.ServicesLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\" />
+    <Folder Include="sql\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\coinMoke.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="src\js\adminApp\interfaces\abstractEditAddPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\interfaces\abstractEntryDataService.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\interfaces\abstractEntryRenderService.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\interfaces\abstractSettingsListPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\interfaces\abstractTableInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\interfaces\iEntryRenderService.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\brokers\addBrokerPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\brokers\brokerListPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\fiatListPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\brokers\editBrokerLocalizationPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\brokers\editBrokerPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\coinListPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\news\addNewsPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\news\editNewsLocalizationPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\news\editNewsPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\news\newsListPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\settings\editSettingPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\settings\settingsListTitlesPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\pageInitializer\settings\settingsListTemplatesAndURlsPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\services\newsListTableInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\services\BrokerListTableInitializer.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\services\coins\entryDataServiceCoin.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\services\coins\entryRenderServiceCoin.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\services\coins\iEntryDataServiceCoin.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\services\fiat\entryDataServiceFiat.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\services\fiat\entryRenderServiceFiat.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\interfaces\iEntryDataService.ts" />
+    <TypeScriptCompile Include="src\js\adminApp\services\settingsListTableInitializer.ts" />
+    <TypeScriptCompile Include="src\js\interfaces\irootbundle.ts" />
+    <TypeScriptCompile Include="src\js\loginApp\pageInitializer\loginPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\services\navigoRouter.ts" />
+    <TypeScriptCompile Include="src\js\services\parsley.d.ts" />
+    <TypeScriptCompile Include="src\js\topCryptoRoot\pageInitializer\newsDetailInitializer.ts" />
+    <TypeScriptCompile Include="src\js\topCryptoRoot\pageInitializer\newsTopInitializer.ts" />
+    <TypeScriptCompile Include="src\js\topCryptoRoot\pageInitializer\searchInitializer.ts" />
+    <TypeScriptCompile Include="src\js\topCryptoRoot\pageInitializer\staticPageInitializer.ts" />
+    <TypeScriptCompile Include="src\js\topCryptoRoot\services\priceGraphCalendar\calendarHelper.ts" />
+    <TypeScriptCompile Include="src\js\topCryptoRoot\services\priceGraphCalendar\dayWeekCalendar.ts" />
+    <TypeScriptCompile Include="src\js\topCryptoRoot\services\priceGraphCalendar\monthCalendar.ts" />
+    <TypeScriptCompile Include="src\js\topCryptoRoot\services\priceGraphCalendar\yearCalendar.ts" />
+    <TypeScriptCompile Include="src\js\topCryptoRoot\services\priceGraphHelper.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Controllers\Brokers\BrokersController.ru-RU.resx">
+      <LastGenOutput>BrokersController.en-US.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\Brokers\BrokersController.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BrokersController.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Resources\Controllers\Brokers\PriceController.ru-RU.Designer.cs">
+      <DependentUpon>PriceController.ru-RU.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\Controllers\Brokers\PriceController.en-US.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PriceController.en-US.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Update="Views\Brokers\TopIndexTemplate.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\News\AddEditTemplate.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\News\EditNewsLocalization.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\News\NewsListAdmin.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\News\NewsDetail.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\News\NewsTop.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Settings\AllSettingsTemplate.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Controllers\Brokers\PriceController.ru-RU.resx">
+      <LastGenOutput>PriceController.en-US.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\Brokers\PriceController.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PriceController.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\CoinInfo\CoinInfoController.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoinInfoController.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\CoinInfo\CoinInfoController.ru-RU.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\Root\RootController.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\Templates\TemplateController.ru-RU.resx">
+      <LastGenOutput>TemplateController.en-US.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\Templates\TemplateController.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TemplateController.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="npm run build:$(ConfigurationName)" />
+  </Target>
+
+</Project>

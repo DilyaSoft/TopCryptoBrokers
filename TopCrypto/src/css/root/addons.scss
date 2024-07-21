@@ -1,0 +1,271 @@
+﻿.broker-logo-inner-img {
+    height: inherit;
+    width: inherit;
+}
+
+.content-text-color {
+    color: #646464 !important;
+}
+
+.broker {
+    height: inherit;
+    width: inherit;
+}
+
+.broker2 {
+    position: relative !important;
+}
+
+.broker {
+    .pre-review {
+        position: absolute;
+        width: 50%;
+        left: 50%;
+        bottom: 0px;
+    }
+
+    .review2 {
+        margin: unset !important;
+        left: -50% !important;
+        width: 100% !important;
+        bottom: -2em !important;
+    }
+
+    .description {
+        margin-bottom: 23px;
+    }
+}
+
+.broker-description {
+    max-width: 350px;
+}
+
+.broker-logo {
+    width: 270px;
+    height: 270px;
+    margin: auto;
+}
+
+.broker-logo > img {
+    max-height: 270px;
+    width: 270px;
+}
+
+.li-button-arrangement ul {
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+.li-button-arrangement li:hover {
+    color: white;
+    background-color: #f70600;
+    cursor: pointer;
+    margin: 0px;
+    border-style: solid;
+    border-color: #f70600;
+    border-width: 10px 1px 10px 0px;
+}
+
+.li-button-arrangement ul li {
+    font-size: 14px !important;
+}
+
+.none-right-border {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-right: none !important;
+}
+
+.search-result {
+    border-bottom: 1px solid rgb(226, 226, 226);
+
+    &:empty {
+        display: none;
+    }
+
+    > ul {
+        max-height: 290px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        overflow-wrap: break-word;
+    }
+}
+
+.site-body {
+    background-color: rgb(2, 3, 5);
+    background-image: none;
+}
+
+.site-footer {
+    z-index: 150;
+    position: relative;
+}
+
+#pre-page > .container {
+    height: 15px;
+    display: block;
+    background-color: rgb(255, 255, 255);
+}
+
+#after-page > .container {
+    background-color: #fff;
+}
+
+.page-wrapper {
+    position: relative;
+}
+
+.banner-center-section {
+    padding: 0px;
+
+    a {
+        cursor: default;
+    }
+}
+
+#table-wrap table {
+    table-layout: auto !important;
+}
+
+#grapthImage {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+}
+
+.table-striped-custom {
+    td {
+        border: 0 !important;
+
+        &:first-child {
+            position: relative;
+        }
+    }
+
+    th:first-child, td:last-child, th:last-child {
+        position: relative;
+    }
+}
+
+.red-border-of-selected-item-left, .red-border-of-selected-item-right {
+    background: #f70600 !important;
+    top: 0;
+    bottom: 0;
+    content: '';
+    position: absolute;
+    border: none !important;
+    padding: 0px !important;
+    float: initial !important;
+}
+
+.red-border-of-selected-item-left {
+    left: -50px;
+    /*background-color: blue !important;*/
+}
+
+.red-border-of-selected-item-right {
+    right: -50px;
+    /*background-color: green !important;*/
+}
+
+.header-logo {
+    max-width: 100% !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.market-title {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.market-update-time {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #e2e2e2;
+    margin: 12px;
+    margin-left: 0px;
+}
+
+.broker-detail-table {
+    display: table;
+
+    > div {
+        display: table-row;
+
+        > div {
+            display: table-cell;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 0px 0px 20px 0px;
+
+            &:first-child {
+                width: 155px;
+                color: #b0b0b0;
+            }
+
+            &:last-child {
+                width: auto;
+                color: #646464;
+                padding: 0px 20px 20px 10px;
+            }
+        }
+    }
+}
+
+.best-crypto-table div.logo {
+    float: none;
+    text-align: center;
+    padding: 0px;
+
+    img {
+        width: 270px;
+        max-height: 270px;
+        padding: 0px;
+    }
+}
+
+.no-padding-logo {
+    padding: 0px !important;
+
+    > .logo {
+        padding: 0px;
+    }
+}
+
+.no-visible {
+    visibility: hidden;
+}
+
+.static-page-container {
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.footer-nav li a {
+    font-size: 14px;
+}
+
+.news-block div a {
+    font-size: 14px;
+}
+
+.site-footer .container a {
+    color: #f70600;
+}
+
+.market-watch {
+    padding-bottom: 10px;
+}
